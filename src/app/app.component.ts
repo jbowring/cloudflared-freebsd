@@ -16,5 +16,13 @@ import releases from "../../release-info.json"
 })
 export class AppComponent {
   title = 'cloudflared';
-  releases: Release[] = releases.sort((a, b) => new Date(b.releaseDate).valueOf() - new Date(a.releaseDate).valueOf());
+  releases: Release[] = Object.entries(releases).map(([binaryPath, release]) => {
+    return {
+      binaryPath: binaryPath,
+      buildDate: release.buildDate,
+      platform: release.platform,
+      releaseDate: release.releaseDate,
+      version: release.version,
+    }
+}).sort((a, b) => new Date(b.releaseDate).valueOf() - new Date(a.releaseDate).valueOf());
 }
