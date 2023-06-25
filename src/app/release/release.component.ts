@@ -7,9 +7,11 @@ import {Release} from "../release";
   standalone: true,
   imports: [CommonModule],
   template: `
-    <p>
-      Release {{JSON.stringify(release)}}
-    </p>
+    <h2>Release {{release.version}}</h2>
+    <p>Release date: {{release.releaseDate}}</p>
+    <p>Download: <a href="{{release.binaryPath}}">{{release.binaryPath.split('/').pop()}}</a></p>
+    <p>Build date: {{release.buildDate}}</p>
+    <p>Platform: {{release.platform}}</p>
   `,
   styleUrls: ['./release.component.css']
 })
