@@ -1,0 +1,142 @@
+[
+  {
+    "binaryPath": "cloudflared-2021.11.0",
+    "buildDate": "2022-02-11T12:13:47",
+    "platform": "FreeBSD",
+    "releaseDate": "2022-02-11T12:13:47",
+    "version": "2021.11.0"
+  },
+  {
+    "binaryPath": "cloudflared-2022.10.0",
+    "buildDate": "2022-10-17T12:40:14",
+    "platform": "FreeBSD",
+    "releaseDate": "2022-10-17T12:40:14",
+    "version": "2022.10.0"
+  },
+  {
+    "binaryPath": "cloudflared-2022.10.0_1",
+    "buildDate": "2022-12-12T12:42:21",
+    "platform": "FreeBSD",
+    "releaseDate": "2022-12-12T12:42:21",
+    "version": "2022.10.0_1"
+  },
+  {
+    "binaryPath": "cloudflared-2022.12.1",
+    "buildDate": "2023-01-02T13:00:27",
+    "platform": "FreeBSD",
+    "releaseDate": "2023-01-02T13:00:27",
+    "version": "2022.12.1"
+  },
+  {
+    "binaryPath": "cloudflared-2022.12.1_1",
+    "buildDate": "2023-01-26T20:59:25",
+    "platform": "FreeBSD",
+    "releaseDate": "2023-01-26T20:59:25",
+    "version": "2022.12.1_1"
+  },
+  {
+    "binaryPath": "cloudflared-2022.2.0",
+    "buildDate": "2022-02-12T10:58:22",
+    "platform": "FreeBSD",
+    "releaseDate": "2022-02-12T10:58:22",
+    "version": "2022.2.0"
+  },
+  {
+    "binaryPath": "cloudflared-2022.2.1",
+    "buildDate": "2022-02-20T12:38:27",
+    "platform": "FreeBSD",
+    "releaseDate": "2022-02-20T12:38:27",
+    "version": "2022.2.1"
+  },
+  {
+    "binaryPath": "cloudflared-2022.2.2",
+    "buildDate": "2022-02-27T22:26:07",
+    "platform": "FreeBSD",
+    "releaseDate": "2022-02-27T22:26:07",
+    "version": "2022.2.2"
+  },
+  {
+    "binaryPath": "cloudflared-2022.2.2_1",
+    "buildDate": "2022-03-30T12:27:41",
+    "platform": "FreeBSD",
+    "releaseDate": "2022-03-30T12:27:41",
+    "version": "2022.2.2_1"
+  },
+  {
+    "binaryPath": "cloudflared-2022.4.0",
+    "buildDate": "2022-04-10T12:41:55",
+    "platform": "FreeBSD",
+    "releaseDate": "2022-04-10T12:41:55",
+    "version": "2022.4.0"
+  },
+  {
+    "binaryPath": "cloudflared-2022.4.0_1",
+    "buildDate": "2022-06-08T12:57:28",
+    "platform": "FreeBSD",
+    "releaseDate": "2022-06-08T12:57:28",
+    "version": "2022.4.0_1"
+  },
+  {
+    "binaryPath": "cloudflared-2022.6.2",
+    "buildDate": "2022-06-20T12:45:15",
+    "platform": "FreeBSD",
+    "releaseDate": "2022-06-20T12:45:15",
+    "version": "2022.6.2"
+  },
+  {
+    "binaryPath": "cloudflared-2022.6.2_1",
+    "buildDate": "2022-07-15T12:58:44",
+    "platform": "FreeBSD",
+    "releaseDate": "2022-07-15T12:58:44",
+    "version": "2022.6.2_1"
+  },
+  {
+    "binaryPath": "cloudflared-2022.7.1",
+    "buildDate": "2022-07-25T12:58:53",
+    "platform": "FreeBSD",
+    "releaseDate": "2022-07-25T12:58:53",
+    "version": "2022.7.1"
+  },
+  {
+    "binaryPath": "cloudflared-2022.7.1_1",
+    "buildDate": "2022-08-08T12:01:59",
+    "platform": "FreeBSD",
+    "releaseDate": "2022-08-08T12:01:59",
+    "version": "2022.7.1_1"
+  },
+  {
+    "binaryPath": "cloudflared-2022.7.1_2",
+    "buildDate": "2022-09-12T12:08:47",
+    "platform": "FreeBSD",
+    "releaseDate": "2022-09-12T12:08:47",
+    "version": "2022.7.1_2"
+  },
+  {
+    "binaryPath": "cloudflared-2022.9.1_1",
+    "buildDate": "2022-10-10T12:25:28",
+    "platform": "FreeBSD",
+    "releaseDate": "2022-10-10T12:25:28",
+    "version": "2022.9.1_1"
+  },
+  {
+    "binaryPath": "cloudflared-2023.2.1",
+    "buildDate": "2023-02-13T12:55:39",
+    "platform": "FreeBSD",
+    "releaseDate": "2023-02-13T12:55:39",
+    "version": "2023.2.1"
+  },
+  {
+    "binaryPath": "cloudflared-2023.2.1_1",
+    "buildDate": "2023-02-20T12:20:09",
+    "platform": "FreeBSD",
+    "releaseDate": "2023-02-20T12:20:09",
+    "version": "2023.2.1_1"
+  },
+  {
+    "binaryPath": "cloudflared-2023.2.1_2",
+    "buildDate": "2023-03-13T12:59:43",
+    "platform": "FreeBSD",
+    "releaseDate": "2023-03-13T12:59:43",
+    "version": "2023.2.1_2"
+  }
+]
