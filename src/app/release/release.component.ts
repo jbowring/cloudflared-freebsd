@@ -12,7 +12,7 @@ import {Release} from "../release";
       <hr class="border-gray-600 pb-4">
       <div class="flex-col text-gray-200">
         <div class="font-bold pb-2">
-          Download: <a class="text-blue-500 underline" href="{{release.binaryPath}}">{{release.binaryPath.split('/').pop()}}</a>
+          Download: <a class="text-blue-500" href="{{release.binaryPath}}">{{release.binaryPath.split('/').pop()}}</a>
         </div>
         <div class="text-sm">Release date: {{release.releaseDate.toISOString().split('T')[0]}}</div>
         <div class="text-sm">Build date: {{release.buildDate.toISOString().split('T')[0]}}</div>
