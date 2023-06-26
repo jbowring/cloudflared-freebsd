@@ -23,7 +23,8 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/binaries"
+              "src/binaries",
+              "src/_redirects"
             ],
             "styles": [
               "src/styles.css"
