@@ -5,8 +5,8 @@ import releases from "../../release-info.json"
 @Component({
   selector: 'app-root',
   template: `
-    <h1 class="text-5xl font-bold text-center text-gray-200 pb-4">Unofficial FreeBSD cloudflared builds</h1>
-    <p class="text-xl pb-8 text-center italic">Cloudflare's Tunnel client (formerly Argo Tunnel)
+    <h1 class="text-4xl font-bold text-center text-gray-200 pb-4">Unofficial FreeBSD cloudflared builds</h1>
+    <p class="text-lg pb-8 text-center italic">Cloudflare's Tunnel client (formerly Argo Tunnel)
       <a href="https://github.com/cloudflare/cloudflared" target="_blank" rel="noopener noreferrer" class="text-blue-500 underline">
         <p class="inline pr-2">GitHub</p>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="inline" viewBox="0 0 16 16">
@@ -18,12 +18,12 @@ import releases from "../../release-info.json"
     <div class="flex justify-center">
       <div class="pb-20 text-center">
         <div class="pb-4 flex align-middle items-center">
-          <h2 class="text-4xl font-bold text-gray-200 mr-3" >Latest release: {{releases[0].version}}</h2>
+          <h2 class="text-3xl font-bold text-gray-200 mr-3" >Latest release: {{releases[0].version}}</h2>
           <div class="bg-green-600 rounded-full px-2 h-6">
             latest
           </div>
         </div>
-        <p class="text-2xl font-bold text-gray-200 pb-3">
+        <p class="text-xl font-bold text-gray-200 pb-3">
           Download: 
           <a href="{{releases[0].binaryPath}}" class="text-blue-500 underline">
             <p class="inline">{{releases[0].binaryPath.split('/').pop()}}</p>
@@ -40,9 +40,9 @@ import releases from "../../release-info.json"
     
     <div class="relative flex justify-center flex-row">
       <div>
-        <p class="text-lg self-center m-2 font-bold">All releases ▼</p>
+        <p class="text-lg self-center m-3 font-bold">All releases ▼</p>
         <div class="flex-col">
-          <div class="my-5" *ngFor="let release of releases">
+          <div class="mb-7" *ngFor="let release of releases">
             <app-release
               [release]="release"
             />
