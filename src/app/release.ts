@@ -2,6 +2,6 @@ export interface Release {
   version: string;
   platform: string;
   binaryPath: string;
-  buildDate: string;
-  releaseDate: string;
+  buildDate: Date;
+  releaseDate: Date;
 }
