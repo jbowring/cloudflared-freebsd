@@ -54,13 +54,13 @@ import releases from "../../release-info.json"
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  releases: Release[] = Object.entries(releases).map(([binaryPath, release]) => {
+  releases: Release[] = Object.entries(releases).map(([version, release]) => {
     return {
-      binaryPath: binaryPath,
+      binaryPath: release.binaryPath,
       buildDate: new Date(release.buildDate),
       platform: release.platform,
       releaseDate: new Date(release.releaseDate),
-      version: release.version,
+      version: version,
     }
 }).sort((a, b) => new Date(b.releaseDate).valueOf() - new Date(a.releaseDate).valueOf());
 }
