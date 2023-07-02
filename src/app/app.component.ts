@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {Release} from "./release";
-import releases from "../../release-info.json"
+import releases from "../release-info.json"
 
 @Component({
   selector: 'app-root',

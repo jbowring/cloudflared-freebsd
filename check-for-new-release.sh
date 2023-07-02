@@ -3,9 +3,9 @@
 set -e -o pipefail
 
 BUILD_DIR=temp
-APP_ROOT=src
+SOURCE_ROOT=$(jq -r '.projects.cloudflared.sourceRoot' angular.json)
 OUTPUT_DIR=binaries
-RELEASE_INFO_PATH='release-info.json'
+RELEASE_INFO_PATH="${SOURCE_ROOT}/release-info.json"
 
 response=$(curl --fail-with-body --silent --show-error -L \
   -H "Accept: application/vnd.github+json" \
@@ -44,8 +44,8 @@ output_basename_path="${OUTPUT_DIR}/$executable_name"
 output_archive_path="${output_basename_path}.7z"
 output_sha1_path="${output_basename_path}.sha1"
 
-7z a -mx=9 "${APP_ROOT}/$output_archive_path" "$executable_path"
-shasum -a 1 "$executable_path" | awk '{ printf $1 }' > "${APP_ROOT}/$output_sha1_path"
+7z a -mx=9 "${SOURCE_ROOT}/$output_archive_path" "$executable_path"
+shasum -a 1 "$executable_path" | awk '{ printf $1 }' > "${SOURCE_ROOT}/$output_sha1_path"
 
 release_info=$(cat "$RELEASE_INFO_PATH")
 jq --arg version "$latest_version" \
