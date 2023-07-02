@@ -63,9 +63,7 @@ jq --arg version "$latest_version" \
 
 rm -rf "$BUILD_DIR"
 
-git config user.name github-actions
-git config user.email github-actions@github.com
 git add .
 git status
-git commit -m "Add version $latest_version"
+git -c user.email='github-actions@github.com' -c user.name='github-actions' commit -m "Add version $latest_version"
 git push
