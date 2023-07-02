@@ -65,5 +65,5 @@ rm -rf "$BUILD_DIR"
 
 git add .
 git status
-git -c user.email='github-actions@github.com' -c user.name='github-actions' commit -m "Add version $latest_version"
+git -c user.email='github-actions[bot]@users.noreply.github.com' -c user.name='github-actions[bot]' commit -m "Add version $latest_version"
 git push
