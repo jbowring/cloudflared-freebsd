@@ -3,7 +3,8 @@
 set -e -o pipefail
 
 BUILD_DIR=temp
-OUTPUT_DIR=src/binaries
+APP_ROOT=src
+OUTPUT_DIR=binaries
 RELEASE_INFO_PATH='release-info.json'
 
 response=$(curl --fail-with-body --silent --show-error -L \
@@ -36,27 +37,31 @@ export TARGET_ARCH=amd64
 make -C "$BUILD_DIR" cloudflared
 
 executable_name="cloudflared-$TARGET_OS-$latest_version"
-mv "${BUILD_DIR}/cloudflared" "${BUILD_DIR}/$executable_name"
+executable_path="${BUILD_DIR}/$executable_name"
+mv "${BUILD_DIR}/cloudflared" "$executable_path"
 
-archive_path="${OUTPUT_DIR}/$executable_name"
-7z a -mx=9 "$archive_path.7z" "${BUILD_DIR}/$executable_name"
+output_basename_path="${OUTPUT_DIR}/$executable_name"
+output_archive_path="${output_basename_path}.7z"
+output_sha1_path="${output_basename_path}.sha1"
 
-rm -rf "$BUILD_DIR"
-
-build_date=$(date -uIseconds)
-release_date=$(<<<"$response" jq -r '.created_at')
+7z a -mx=9 "${APP_ROOT}/$output_archive_path" "$executable_path"
+shasum -a 1 "$executable_path" | awk '{ printf $1 }' > "${APP_ROOT}/$output_sha1_path"
 
 release_info=$(cat "$RELEASE_INFO_PATH")
 jq --arg version "$latest_version" \
-    --arg build_date "$build_date" \
-    --arg release_date "$release_date" \
-    --arg archive_path "$archive_path" \
+    --arg build_date "$(date -uIseconds)" \
+    --arg release_date "$(<<<"$response" jq -r '.created_at')" \
+    --arg output_archive_path "$output_archive_path" \
+    --arg binary_sha1_path "$output_sha1_path" \
     '.[$version] = {
         "buildDate": $build_date,
         "platform": "FreeBSD",
         "releaseDate": $release_date,
-        "binaryPath": $archive_path
+        "binary7zipPath": $output_archive_path,
+        "binarySHA1Path": $binary_sha1_path
     }' <<<"$release_info" >"$RELEASE_INFO_PATH"
+
+rm -rf "$BUILD_DIR"
 
 git config user.name github-actions
 git config user.email github-actions@github.com

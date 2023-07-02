@@ -38,6 +38,3 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
-
-# Cloudflare Pages redirect
-src/_redirects

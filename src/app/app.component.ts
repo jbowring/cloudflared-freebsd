@@ -25,15 +25,15 @@ import releases from "../../release-info.json"
         </div>
         <p class="text-xl font-bold text-gray-200 pb-3">
           Download: 
-          <a href="{{releases[0].binaryPath}}" class="text-blue-500 underline">
-            <p class="inline">{{releases[0].binaryPath.split('/').pop()}}</p>
+          <a href="{{releases[0].binary7zipPath}}" class="text-blue-500 underline">
+            <p class="inline">{{releases[0].binary7zipPath.split('/').pop()}}</p>
             <svg class="w-6 h-6 inline pb-0.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 18">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 1v11m0 0 4-4m-4 4L4 8m11 4v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3"/>
             </svg>
           </a>
         </p>
         <p>
-          Or use the <a class="underline" href="/binaries/cloudflared-freebsd-latest">latest binary link</a>
+          Or use the <a class="underline" href="/binaries/cloudflared-freebsd-latest.7z">latest archive link</a>
         </p>
       </div>
     </div>
@@ -56,7 +56,8 @@ import releases from "../../release-info.json"
 export class AppComponent {
   releases: Release[] = Object.entries(releases).map(([version, release]) => {
     return {
-      binaryPath: release.binaryPath,
+      binary7zipPath: release.binary7zipPath,
+      binarySHA1Path: release.binarySHA1Path,
       buildDate: new Date(release.buildDate),
       platform: release.platform,
       releaseDate: new Date(release.releaseDate),
