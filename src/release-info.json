@@ -103,5 +103,12 @@
     "releaseDate": "2023-07-13T19:31:33Z",
     "binary7zipPath": "binaries/cloudflared-freebsd-2023.7.1.7z",
     "binarySHA1Path": "binaries/cloudflared-freebsd-2023.7.1.sha1"
+  },
+  "2023.7.2": {
+    "buildDate": "2023-07-25T08:45:11+00:00",
+    "platform": "FreeBSD",
+    "releaseDate": "2023-07-21T22:31:10Z",
+    "binary7zipPath": "binaries/cloudflared-freebsd-2023.7.2.7z",
+    "binarySHA1Path": "binaries/cloudflared-freebsd-2023.7.2.sha1"
   }
 }
