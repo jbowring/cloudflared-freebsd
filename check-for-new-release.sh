@@ -34,6 +34,7 @@ export CGO_ENABLED=0
 export TARGET_OS=freebsd
 export TARGET_ARCH=amd64
 
+bash "$BUILD_DIR/.teamcity/install-cloudflare-go.sh"
 make -C "$BUILD_DIR" cloudflared
 
 executable_name="cloudflared-$TARGET_OS-$latest_version"
