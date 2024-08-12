@@ -2,6 +2,15 @@
 
 set -e -o pipefail
 
+if [[ $# -gt 1 || "$1" == "-h" || "$1" == "--help" ]]; then
+  echo "Usage: $(basename "$0") [github api auth token]"
+  exit
+fi
+
+if [[ $# -eq 1 ]]; then
+  auth_header="Authorization: Bearer $1"
+fi
+
 BUILD_DIR=temp
 SOURCE_ROOT=$(jq -r '.projects.cloudflared.sourceRoot' angular.json)
 OUTPUT_DIR=binaries
@@ -10,7 +19,8 @@ RELEASE_INFO_PATH="${SOURCE_ROOT}/release-info.json"
 response=$(curl --fail-with-body --silent --show-error -L \
   -H "Accept: application/vnd.github+json" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
-  'https://api.github.com/repos/cloudflare/cloudflared/releases/latest') || (echo "$response" >&2; return 1)
+  -H "$auth_header" \
+  'https://api.github.com/repos/cloudflare/cloudflared/releases/latest') || (echo "$response" >&2; exit 1)
 latest_version=$(<<<"$response" jq -r '.name')
 echo "Latest version is $latest_version"
 
